@@ -14,30 +14,50 @@ import persona.Estudiante;
  */
 public class ListaInformacion 
 {
-    private List<Estudiante> iles_listaStudent;
+    private List<Estudiante> instantListStudent;
     
     public ListaInformacion()
     {
-        this.iles_listaStudent = new ArrayList<>();
+        this.instantListStudent = new ArrayList<>();
     }
 
-    public List<Estudiante> getIles_listaStudent() {
-        return iles_listaStudent;
+    public List<Estudiante> getInstantListStudent() {
+        return instantListStudent;
     }
 
-    public void setIles_listaStudent(List<Estudiante> iles_listaStudent) {
-        this.iles_listaStudent = iles_listaStudent;
+    public void setInstantListStudent(List<Estudiante> instantListStudent) {
+        this.instantListStudent = instantListStudent;
     }
     
     public void addElement(Estudiante ae_a)
     {
-        iles_listaStudent.add(ae_a);
+        instantListStudent.add(ae_a);
     }
     
-    public int studentToList()
+    public void deleteEment(int indice)
     {
-        return iles_listaStudent.size();
+        instantListStudent.remove(indice);
     }
+    
+    public int seachStudent(String r)
+    {
+        int index = -1;
+        int bound = instantListStudent.size();
+        for (int userInd = 0; userInd < bound; userInd++) {
+            if (instantListStudent.get(userInd).getNombre().equals(r)) {
+                index = userInd;
+                break;
+            }
+        }
+        return index;
+    }
+    
+    public void allDeleteRegister()
+    {
+        instantListStudent.clear();
+    }
+    
+
     
     
     

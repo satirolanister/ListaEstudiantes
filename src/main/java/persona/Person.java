@@ -10,31 +10,31 @@ package persona;
  */
 public class Person 
 {
-    private String is_nombre, is_correo;
-    private int is_edad;
+    private String nombre, correo;
+    private int edad;
 
-    public String getIs_nombre() {
-        return is_nombre;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setIs_nombre(String is_nombre) {
-        this.is_nombre = is_nombre;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getIs_correo() {
-        return is_correo;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setIs_correo(String is_correo) {
-        this.is_correo = is_correo;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
-    public int getIs_edad() {
-        return is_edad;
+    public int getEdad() {
+        return edad;
     }
 
-    public void setIs_edad(int is_edad) {
-        this.is_edad = is_edad;
+    public void setEdad(int edad) {
+        this.edad = edad;
     }
     
 }

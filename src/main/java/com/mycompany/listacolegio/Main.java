@@ -2,7 +2,7 @@ package com.mycompany.listacolegio;
 
 import java.util.Scanner;
 import logica.Logica;
-import persona.Estudiante;
+
 
 /**
  *
@@ -12,36 +12,47 @@ public class Main
 {
      public static void main(String args[])
      {
-         int li_op;
-         Logica lil_instancia;
-         Scanner lsc_input;
+         int opcionesMenu;
+         Logica instanciaLogica;
+         Scanner input;
          
-         li_op = 0;
-         lil_instancia = new Logica();
-         lsc_input = new Scanner(System.in);
+         opcionesMenu = 0;
+         instanciaLogica = new Logica();
+         input = new Scanner(System.in);
          
-         while (li_op != 6) 
+         while (opcionesMenu != 6) 
          {   
-             System.out.println(lil_instancia.listaMenu());
-             li_op = lsc_input.nextInt();
+             System.out.println(instanciaLogica.listaMenu());
+             opcionesMenu = input.nextInt();
              
-             switch(li_op)
+             switch(opcionesMenu)
              {
                  case 1:
-                     lil_instancia.getListStudent(); 
+                     instanciaLogica.getListStudent(); 
                  break;
                  case 2:
                      int cantidad;
                      
-                     cantidad = lil_instancia.sizeListStudent();
+                     cantidad = instanciaLogica.sizeListStudent();
                      
-                     System.out.println(cantidad);
+                     System.out.println("Cantidad de alumnos en la lista "+cantidad);
                  break;
                  case 3:
-                     System.out.println("op3");
+                     String alumnoBusqueda;
+                     instanciaLogica.getListStudent();
+                     System.out.println("Escriba el nombre del estudiante que desee borrar");
+                     alumnoBusqueda = input.next();
+                     if(alumnoBusqueda!=null)
+                     {
+                       instanciaLogica.deleteStudent(alumnoBusqueda);
+                     }
+                     
                  break;
                  case 4:
-                     System.out.println("op4");
+                     int select;
+                     System.out.println("Desea eliminar todos los registros de la lista de alunmos");
+                     select = input.nextInt();
+                     instanciaLogica.deleteAllList(select);
                  break;
                  case 5:
                  {
@@ -49,25 +60,25 @@ public class Main
                      String ls_correo;
                      String ls_curso;
                      int li_edad;
-
-                     System.out.println("Ingrese el nombre completo del alumno\n");
-                     ls_nombre = lsc_input.next();
-                     System.out.println("Ingrese el correo electronico del alumno\n");
-                     ls_correo = lsc_input.next();
-                     System.out.println("Ingrese la edad del alumno\n");
-                     li_edad = lsc_input.nextInt();
-                     System.out.println("Ingrese el curso al que pertenece el alumno\n");
-                     ls_curso = lsc_input.next();
                      
-                     lil_instancia.addStudent(ls_nombre, ls_correo, ls_curso, li_edad);
+                     System.out.println("Ingrese el nombre completo del alumno\n");
+                     ls_nombre = input.next();
+                     System.out.println("Ingrese el correo electronico del alumno\n");
+                     ls_correo = input.next();
+                     System.out.println("Ingrese la edad del alumno\n");
+                     li_edad = input.nextInt();
+                     System.out.println("Ingrese el curso al que pertenece el alumno\n");
+                     ls_curso = input.next();
+                                         
+                     instanciaLogica.addStudent(ls_nombre, ls_correo, ls_curso, li_edad);
                      
                  }    
                  break;
                  case 6:
-                     System.out.println("op6");
+                     System.out.println("Adios, Gracias por usar la aplicacion");
                  break;
                  default:
-                     System.out.println("opd");
+                     System.out.println("Opcion invalida");
                  break;
              }
          }
