@@ -111,7 +111,7 @@ public class Logica {
         if(select == 1)
         {
             instanciaListas.allDeleteRegister();
-            System.out.println("Se a eliminado todos los registros de la lista \n1.Si\t2.No");
+            System.out.println("Se a eliminado todos los registros de la lista");
         }
         else
         {

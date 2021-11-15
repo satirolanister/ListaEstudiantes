@@ -50,7 +50,7 @@ public class Main
                  break;
                  case 4:
                      int select;
-                     System.out.println("Desea eliminar todos los registros de la lista de alunmos");
+                     System.out.println("Desea eliminar todos los registros de la lista de alunmos \n1.Si\t2.No");
                      select = input.nextInt();
                      instanciaLogica.deleteAllList(select);
                  break;
